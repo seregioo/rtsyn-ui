@@ -1,0 +1,42 @@
+[package]
+name = "rtsyn-gui"
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+
+[dependencies]
+eframe = "0.27"
+egui = "0.27"
+egui_plot = "0.27"
+serde_json = "1"
+plotters = { version = "0.3", default-features = false, features = ["bitmap_backend", "bitmap_encoder", "line_series", "ttf", "svg_backend"] }
+workspace = { path = "compat/workspace" }
+rtsyn-runtime = { path = "compat/rtsyn-runtime" }
+rtsyn-core = { path = "compat/rtsyn-core" }
+rtsyn-cli = { path = "compat/rtsyn-cli" }
+rtsyn_plugin = { path = "compat/rtsyn_plugin" }
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+rfd = "0.15.3"
+thiserror = "1"
+log = "0.4"
+plantuml_encoding = "2.0.3"
+ureq = "2"
+image = { version = "0.25", default-features = false, features = ["png"] }
+arboard = "3"
+csv_recorder_plugin = { path = "compat/csv_recorder_plugin" }
+live_plotter_plugin = { path = "compat/live_plotter_plugin" }
+performance_monitor_plugin = { path = "compat/performance_monitor_plugin" }
+comedi_daq_plugin = { path = "compat/comedi_daq_plugin", optional = true }
+rtsyn-ui = { path = ".." }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[features]
+default = []
+comedi = ["comedi_daq_plugin", "rtsyn-core/comedi"]
+
+[lib]
+name = "rtsyn_gui"
+path = "src/lib.rs"

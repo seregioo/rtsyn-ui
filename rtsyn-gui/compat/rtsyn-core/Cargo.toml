@@ -1,0 +1,28 @@
+[package]
+name = "rtsyn-core"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[features]
+default = []
+comedi = ["comedi_daq_plugin"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+log = "0.4"
+workspace = { path = "../workspace" }
+rtsyn_plugin = { path = "../rtsyn_plugin" }
+
+csv_recorder_plugin = { path = "../csv_recorder_plugin" }
+live_plotter_plugin = { path = "../live_plotter_plugin" }
+performance_monitor_plugin = { path = "../performance_monitor_plugin" }
+
+comedi_daq_plugin = { path = "../comedi_daq_plugin", optional = true }
+
+toml = "0.8"
+
+[dev-dependencies]
+tempfile = "3"

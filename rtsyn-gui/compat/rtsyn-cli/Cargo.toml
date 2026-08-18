@@ -1,0 +1,15 @@
+[package]
+name = "rtsyn-cli"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+log = "0.4"
+rtsyn-core = { path = "../rtsyn-core" }
+workspace = { path = "../workspace" }
+rtsyn_plugin = { path = "../rtsyn_plugin" }
+rtsyn-ui = { path = "../../.." }

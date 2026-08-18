@@ -1,0 +1,16 @@
+[package]
+name = "rtsyn-runtime"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rtsyn_plugin = { path = "../rtsyn_plugin" }
+workspace = { path = "../workspace" }
+serde_json = "1"
+rtsyn-ui = { path = "../../.." }
+
+[features]
+default = []
+preempt_rt = []
+xenomai = []
+comedi = []

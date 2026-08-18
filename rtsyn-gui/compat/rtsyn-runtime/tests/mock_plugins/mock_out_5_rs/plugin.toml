@@ -1,0 +1,5 @@
+name = "Mock Out 5"
+kind = "mock_out_5_rs"
+version = "0.1.0"
+description = "Test-only dynamic plugin that always outputs out = 5.0"
+library = "libmock_out_5_rs.so"
