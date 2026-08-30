@@ -1,0 +1,6 @@
+name = "plant"
+
+[[nodes]]
+kind = "plugin"
+name = "controller"
+path = "/tmp/controller.so"
