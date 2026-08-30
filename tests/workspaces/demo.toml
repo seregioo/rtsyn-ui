@@ -1,0 +1,21 @@
+name = "demo"
+description = "client side workspace"
+
+[[nodes]]
+kind = "plugin"
+name = "adder"
+path = "/tmp/adder.so"
+autostart = true
+
+[[nodes]]
+kind = "device"
+name = "file-device"
+path = "/tmp/device.so"
+autostart = false
+
+[[connections]]
+id = 12
+from_node = 1
+from_port = 0
+to_node = 2
+to_port = 0
